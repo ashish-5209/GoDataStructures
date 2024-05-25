@@ -12,7 +12,8 @@ func App() {
 	fmt.Scanln(&val)
 
 	switch val {
-	case 0:
+	case val:
+		fmt.Println(heap[val])
 		InsertDelete()
 	}
 }

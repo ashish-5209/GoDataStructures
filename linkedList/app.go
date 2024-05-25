@@ -14,7 +14,7 @@ func App() {
 
 	switch val {
 	case 0:
-		fmt.Println(llMap[0])
+		fmt.Println(llMap[val])
 		InsertDelete()
 	}
 }

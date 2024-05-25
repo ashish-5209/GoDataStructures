@@ -4,3 +4,6 @@ Data Structures in GO
 
 1 - Heap
     0 - Insert and Delete
+
+2 - Stack
+    0 - Insert and Delete
