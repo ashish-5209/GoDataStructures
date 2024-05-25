@@ -7,3 +7,6 @@ Data Structures in GO
 
 2 - Stack
     0 - Insert and Delete
+
+3 - Queue
+    0 - Insert and Delete
