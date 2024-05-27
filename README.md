@@ -1,4 +1,6 @@
 Data Structures in GO
+
+
 0 - Linked List
     0 - Insert and Delete
 
@@ -10,3 +12,6 @@ Data Structures in GO
 
 3 - Queue
     0 - Insert and Delete
+
+4 - Binary Search Tree
+    0 - Insert and Search
