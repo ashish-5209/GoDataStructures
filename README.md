@@ -15,3 +15,6 @@ Data Structures in GO
 
 4 - Binary Search Tree
     0 - Insert and Search
+
+5 - Graph
+    0 - Insert and Print

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	linkedList "gods/LinkedList"
 	"gods/binarySearchTree"
+	"gods/graph"
 	"gods/heap"
 	"gods/queue"
 	"gods/stack"
@@ -16,6 +17,7 @@ func main() {
 	dsMap[2] = "Stack"
 	dsMap[3] = "Queue"
 	dsMap[4] = "Binary Search Tree"
+	dsMap[5] = "Graph"
 
 	for key, val := range dsMap {
 		fmt.Println(key, "			", val)
@@ -39,6 +41,9 @@ func main() {
 	case 4:
 		fmt.Println(dsMap[val])
 		binarySearchTree.App()
+	case 5:
+		fmt.Println(dsMap[val])
+		graph.App()
 	}
 
 }
