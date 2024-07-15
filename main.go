@@ -6,6 +6,7 @@ import (
 	"gods/binarySearchTree"
 	"gods/graph"
 	"gods/heap"
+	"gods/matrix"
 	"gods/queue"
 	"gods/stack"
 )
@@ -18,6 +19,7 @@ func main() {
 	dsMap[3] = "Queue"
 	dsMap[4] = "Binary Search Tree"
 	dsMap[5] = "Graph"
+	dsMap[6] = "MATRIX"
 
 	for key, val := range dsMap {
 		fmt.Println(key, "			", val)
@@ -44,6 +46,9 @@ func main() {
 	case 5:
 		fmt.Println(dsMap[val])
 		graph.App()
+	case 6:
+		fmt.Println(dsMap[val])
+		matrix.App()
 	}
 
 }
