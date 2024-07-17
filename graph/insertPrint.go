@@ -2,19 +2,19 @@ package graph
 
 import "fmt"
 
-// Graph represents an adjacency list graph
-type Graph struct {
+// Graphs represents an adjacency list graphs
+type Graphs struct {
 	vertices []*Vertex
 }
 
-// Vertex represents a graph vertex
+// Vertex represents a graphs vertex
 type Vertex struct {
 	key      int
 	adjacent []*Vertex
 }
 
-// AddVertex adds a vertex to the graph
-func (g *Graph) AddVertex(k int) {
+// AddVertex adds a vertex to the graphs
+func (g *Graphs) AddVertex(k int) {
 	if contains(g.vertices, k) {
 		err := fmt.Errorf("Vertex %v not added because it is an existing key", k)
 		fmt.Println(err.Error())
@@ -22,8 +22,8 @@ func (g *Graph) AddVertex(k int) {
 	g.vertices = append(g.vertices, &Vertex{key: k})
 }
 
-// AddEdge adds and edge to the graph
-func (g *Graph) AddEdge(from, to int) {
+// AddEdge adds and edge to the graphs
+func (g *Graphs) AddEdge(from, to int) {
 	// get vertex
 	fromVertex := g.getVertex(from)
 	toVertex := g.getVertex(to)
@@ -42,7 +42,7 @@ func (g *Graph) AddEdge(from, to int) {
 }
 
 // getVertex return a pointer to the vertex with a key integer
-func (g *Graph) getVertex(k int) *Vertex {
+func (g *Graphs) getVertex(k int) *Vertex {
 	for i, v := range g.vertices {
 		if v.key == k {
 			return g.vertices[i]
@@ -62,7 +62,7 @@ func contains(s []*Vertex, k int) bool {
 }
 
 // Print will print the adjacent List for each vertex of the origin
-func (g *Graph) Print() {
+func (g *Graphs) Print() {
 	for _, v := range g.vertices {
 		fmt.Printf("\nVertex %v : ", v.key)
 		for _, v := range v.adjacent {
@@ -73,7 +73,7 @@ func (g *Graph) Print() {
 }
 
 func InsertPrint() {
-	test := &Graph{}
+	test := &Graphs{}
 	for i := 0; i < 5; i++ {
 		test.AddVertex(i)
 	}
