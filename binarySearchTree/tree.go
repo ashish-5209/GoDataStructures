@@ -96,4 +96,8 @@ func InsertSearch() {
 	fmt.Println(root.CheckBalancedTree())
 
 	fmt.Println(root.MaxWidth())
+
+	root.MirrorTree()
+	root.InOrderTraversal()
+	fmt.Println()
 }
