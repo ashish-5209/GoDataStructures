@@ -5,25 +5,25 @@ import (
 	"fmt"
 )
 
-type MinHeap []int
+type MinHeapLS []int
 
-func (h MinHeap) Len() int {
+func (h MinHeapLS) Len() int {
 	return len(h)
 }
 
-func (h MinHeap) Swap(i, j int) {
+func (h MinHeapLS) Swap(i, j int) {
 	h[i], h[j] = h[j], h[i]
 }
 
-func (h MinHeap) Less(i, j int) bool {
+func (h MinHeapLS) Less(i, j int) bool {
 	return h[i] < h[j]
 }
 
-func (h *MinHeap) Push(x interface{}) {
+func (h *MinHeapLS) Push(x interface{}) {
 	*h = append(*h, x.(int))
 }
 
-func (h *MinHeap) Pop() interface{} {
+func (h *MinHeapLS) Pop() interface{} {
 	old := *h
 	n := len(old)
 	x := old[n-1]
@@ -32,35 +32,35 @@ func (h *MinHeap) Pop() interface{} {
 }
 
 type KthLargest struct {
-	minHeap *MinHeap
-	k       int
+	minHeapLS *MinHeapLS
+	k         int
 }
 
 func NewKthLargest(k int) *KthLargest {
-	h := &MinHeap{}
+	h := &MinHeapLS{}
 	heap.Init(h)
 	return &KthLargest{
-		minHeap: h,
-		k:       k,
+		minHeapLS: h,
+		k:         k,
 	}
 }
 
 func (kl *KthLargest) Add(num int) int {
-	if kl.minHeap.Len() < kl.k {
-		heap.Push(kl.minHeap, num)
-	} else if num > (*kl.minHeap)[0] {
-		heap.Pop(kl.minHeap)
-		heap.Push(kl.minHeap, num)
+	if kl.minHeapLS.Len() < kl.k {
+		heap.Push(kl.minHeapLS, num)
+	} else if num > (*kl.minHeapLS)[0] {
+		heap.Pop(kl.minHeapLS)
+		heap.Push(kl.minHeapLS, num)
 	}
 
-	if kl.minHeap.Len() < kl.k {
+	if kl.minHeapLS.Len() < kl.k {
 		return -1
 	}
 
-	return (*kl.minHeap)[0]
+	return (*kl.minHeapLS)[0]
 }
 
-func main() {
+func KthLargestStream() {
 	k := 4
 	arr := []int{1, 2, 3, 4, 5, 6}
 

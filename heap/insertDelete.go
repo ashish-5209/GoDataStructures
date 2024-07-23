@@ -3,18 +3,18 @@ package heap
 import "fmt"
 
 // MaxHeap struct has a slice that holds the array
-type MaxHeap struct {
+type MaxHeaps struct {
 	array []int
 }
 
 // Insert adds an element to the heap
-func (h *MaxHeap) Insert(val int) {
+func (h *MaxHeaps) Insert(val int) {
 	h.array = append(h.array, val)
 	h.MaxHeapifyUp(len(h.array) - 1)
 }
 
 // Extracts returns the largets	key, and removes it from the heap
-func (h *MaxHeap) ExtractMax() int {
+func (h *MaxHeaps) ExtractMax() int {
 	extracted := h.array[0]
 	l := len(h.array) - 1
 
@@ -33,7 +33,7 @@ func (h *MaxHeap) ExtractMax() int {
 }
 
 // MaxHeapifyUp will heapify from the bottom
-func (h *MaxHeap) MaxHeapifyUp(idx int) {
+func (h *MaxHeaps) MaxHeapifyUp(idx int) {
 	for h.array[parent(idx)] < h.array[idx] {
 		h.Swap(parent(idx), idx)
 		idx = parent(idx)
@@ -41,7 +41,7 @@ func (h *MaxHeap) MaxHeapifyUp(idx int) {
 }
 
 // Swap the index value
-func (h *MaxHeap) Swap(i1, i2 int) {
+func (h *MaxHeaps) Swap(i1, i2 int) {
 	h.array[i1], h.array[i2] = h.array[i2], h.array[i1]
 }
 
@@ -61,7 +61,7 @@ func right(i int) int {
 }
 
 // MaxHeapifyDown will heapify top to bottom
-func (h *MaxHeap) MaxHeapifyDown(idx int) {
+func (h *MaxHeaps) MaxHeapifyDown(idx int) {
 	lastIndex := len(h.array) - 1
 	l, r := left(idx), right(idx)
 	childToCompare := 0
@@ -88,7 +88,7 @@ func (h *MaxHeap) MaxHeapifyDown(idx int) {
 }
 
 func InsertDelete() {
-	m := &MaxHeap{}
+	m := &MaxHeaps{}
 	buildHeap := []int{10, 20, 30, 5, 7, 9, 11, 13, 15, 17}
 	for _, val := range buildHeap {
 		m.Insert(val)

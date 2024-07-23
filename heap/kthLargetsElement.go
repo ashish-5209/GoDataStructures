@@ -5,14 +5,14 @@ import (
 	"fmt"
 )
 
-// IntHeap is a min-heap of integers.
-type IntHeap []int
+// IntHeapLE is a min-heap of integers.
+type IntHeapLE []int
 
-func (h IntHeap) Len() int            { return len(h) }
-func (h IntHeap) Less(i, j int) bool  { return h[i] < h[j] }
-func (h IntHeap) Swap(i, j int)       { h[i], h[j] = h[j], h[i] }
-func (h *IntHeap) Push(x interface{}) { *h = append(*h, x.(int)) }
-func (h *IntHeap) Pop() interface{} {
+func (h IntHeapLE) Len() int            { return len(h) }
+func (h IntHeapLE) Less(i, j int) bool  { return h[i] < h[j] }
+func (h IntHeapLE) Swap(i, j int)       { h[i], h[j] = h[j], h[i] }
+func (h *IntHeapLE) Push(x interface{}) { *h = append(*h, x.(int)) }
+func (h *IntHeapLE) Pop() interface{} {
 	old := *h
 	n := len(old)
 	x := old[n-1]
@@ -21,7 +21,7 @@ func (h *IntHeap) Pop() interface{} {
 }
 
 func kthLargest(arr []int, k int) int {
-	h := &IntHeap{}
+	h := &IntHeapLE{}
 	heap.Init(h)
 
 	for _, num := range arr {
@@ -34,7 +34,7 @@ func kthLargest(arr []int, k int) int {
 	return heap.Pop(h).(int)
 }
 
-func main() {
+func KthLasgestElement() {
 	arr := []int{3, 2, 1, 5, 6, 4}
 	k := 2
 	fmt.Printf("The %d-th largest element is %d\n", k, kthLargest(arr, k))

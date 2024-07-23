@@ -5,25 +5,25 @@ import (
 	"fmt"
 )
 
-type IntHeap []int
+type IntHeapMO []int
 
-func (h IntHeap) Len() int {
+func (h IntHeapMO) Len() int {
 	return len(h)
 }
 
-func (h IntHeap) Less(i, j int) bool {
+func (h IntHeapMO) Less(i, j int) bool {
 	return h[i] < h[j]
 }
 
-func (h IntHeap) Swap(i, j int) {
+func (h IntHeapMO) Swap(i, j int) {
 	h[i], h[j] = h[j], h[i]
 }
 
-func (h *IntHeap) Push(x interface{}) {
+func (h *IntHeapMO) Push(x interface{}) {
 	*h = append(*h, x.(int))
 }
 
-func (h *IntHeap) Pop() interface{} {
+func (h *IntHeapMO) Pop() interface{} {
 	old := *h
 	n := len(old)
 	x := old[n-1]
@@ -43,7 +43,7 @@ func mostOccur(arr []int, n, k int) int {
 		frequencies = append(frequencies, count)
 	}
 
-	h := &IntHeap{}
+	h := &IntHeapMO{}
 	heap.Init(h)
 
 	for _, freq := range frequencies {
@@ -60,7 +60,7 @@ func mostOccur(arr []int, n, k int) int {
 	return sum
 }
 
-func main() {
+func MostOccurElement() {
 	arr := []int{3, 1, 4, 4, 5, 2, 6, 1}
 	n := len(arr)
 	k := 2

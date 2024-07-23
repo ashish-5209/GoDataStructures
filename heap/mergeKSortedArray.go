@@ -59,7 +59,7 @@ func mergeKSortedArrays(arrays [][]int, k int) []int {
 	return result
 }
 
-func main() {
+func MergeKSorted() {
 	arrays := [][]int{
 		{1, 5, 9},
 		{2, 6, 8},

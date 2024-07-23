@@ -5,31 +5,31 @@ import (
 	"fmt"
 )
 
-// IntHeap is a min heap of integers
-type IntHeap []int
+// IntHeapNS is a min heap of integers
+type IntHeapNS []int
 
 // Len returns the number of elements in the heap
-func (h IntHeap) Len() int {
+func (h IntHeapNS) Len() int {
 	return len(h)
 }
 
 // Less returns true if the element at index i is less than the element at index j.
-func (h IntHeap) Less(i, j int) bool {
+func (h IntHeapNS) Less(i, j int) bool {
 	return h[i] < h[j]
 }
 
 // Swap swaps the elements at indices i and j.
-func (h IntHeap) Swap(i, j int) {
+func (h IntHeapNS) Swap(i, j int) {
 	h[i], h[j] = h[j], h[i]
 }
 
 // Push adds an element to the heap
-func (h *IntHeap) Push(x interface{}) {
+func (h *IntHeapNS) Push(x interface{}) {
 	*h = append(*h, x.(int))
 }
 
 // Pop removes and returns the minimum element from the heap.
-func (h *IntHeap) Pop() interface{} {
+func (h *IntHeapNS) Pop() interface{} {
 
 	old := *h
 	n := len(old)
@@ -41,7 +41,7 @@ func (h *IntHeap) Pop() interface{} {
 // sort nearly sorted array
 func NearlySorted(arr []int, k int) []int {
 	var res []int
-	h := &IntHeap{}
+	h := &IntHeapNS{}
 	heap.Init(h)
 	for _, num := range arr {
 		heap.Push(h, num)
@@ -58,7 +58,7 @@ func NearlySorted(arr []int, k int) []int {
 	return res
 }
 
-func main() {
+func NearlySortedArray() {
 	arr := []int{3, 1, 4, 2, 5}
 	k := 2
 	fmt.Println(NearlySorted(arr, k))

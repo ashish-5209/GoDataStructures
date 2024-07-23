@@ -5,25 +5,25 @@ import (
 	"fmt"
 )
 
-type IntHeap []int
+type IntHeapSE []int
 
-func (h IntHeap) Len() int {
+func (h IntHeapSE) Len() int {
 	return len(h)
 }
 
-func (h IntHeap) Swap(i, j int) {
+func (h IntHeapSE) Swap(i, j int) {
 	h[i], h[j] = h[j], h[i]
 }
 
-func (h IntHeap) Less(i, j int) bool {
+func (h IntHeapSE) Less(i, j int) bool {
 	return h[i] > h[j]
 }
 
-func (h *IntHeap) Push(x interface{}) {
+func (h *IntHeapSE) Push(x interface{}) {
 	*h = append(*h, x.(int))
 }
 
-func (h *IntHeap) Pop() interface{} {
+func (h *IntHeapSE) Pop() interface{} {
 	old := *h
 	n := len(old)
 	x := old[n-1]
@@ -32,7 +32,7 @@ func (h *IntHeap) Pop() interface{} {
 }
 
 func kthSmallest(arr []int, n, k int) int {
-	h := &IntHeap{}
+	h := &IntHeapSE{}
 	heap.Init(h)
 
 	for _, val := range arr {
@@ -45,7 +45,7 @@ func kthSmallest(arr []int, n, k int) int {
 	return heap.Pop(h).(int)
 }
 
-func main() {
+func KthSmallestElement() {
 	arr := []int{4, 3, 7, 6, 5}
 	n := len(arr)
 	k := 5

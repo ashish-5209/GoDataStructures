@@ -5,25 +5,25 @@ import (
 	"fmt"
 )
 
-type IntHeap []int
+type IntHeapCR []int
 
-func (h IntHeap) Less(i, j int) bool {
+func (h IntHeapCR) Less(i, j int) bool {
 	return h[i] < h[j]
 }
 
-func (h IntHeap) Swap(i, j int) {
+func (h IntHeapCR) Swap(i, j int) {
 	h[i], h[j] = h[j], h[i]
 }
 
-func (h IntHeap) Len() int {
+func (h IntHeapCR) Len() int {
 	return len(h)
 }
 
-func (h *IntHeap) Push(x interface{}) {
+func (h *IntHeapCR) Push(x interface{}) {
 	*h = append(*h, x.(int))
 }
 
-func (h *IntHeap) Pop() interface{} {
+func (h *IntHeapCR) Pop() interface{} {
 	old := *h
 	n := len(old)
 	x := old[n-1]
@@ -36,7 +36,7 @@ func minCostRope(arr []int, n int) int {
 		return 0
 	}
 
-	h := &IntHeap{}
+	h := &IntHeapCR{}
 	heap.Init(h)
 
 	for _, val := range arr {
@@ -53,7 +53,7 @@ func minCostRope(arr []int, n int) int {
 	return sum
 }
 
-func main() {
+func MinCostOfRope() {
 	arr := []int{4, 2, 7, 6, 9}
 
 	fmt.Println(minCostRope(arr, len(arr)))

@@ -1,4 +1,4 @@
-package linkedList
+package linkedLists
 
 import "fmt"
 
