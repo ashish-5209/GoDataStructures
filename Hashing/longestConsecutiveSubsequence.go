@@ -10,7 +10,7 @@ func LongestConsecutiveSubsequence() {
 		boolMap[val] = true
 	}
 
-	for key, _ := range boolMap {
+	for key := range boolMap {
 		if _, ok := boolMap[key-1]; !ok {
 			j := key
 			for {

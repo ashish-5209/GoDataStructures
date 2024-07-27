@@ -25,7 +25,7 @@ func SortArrayByOtherArrray() {
 
 	currArr := make([]int, 0, len(freqMap))
 
-	for key, _ := range freqMap {
+	for key := range freqMap {
 		currArr = append(currArr, key)
 	}
 	sort.Slice(currArr, func(i, j int) bool {

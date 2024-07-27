@@ -106,7 +106,7 @@ func main() {
 		rest = append(rest, false)
 	}
 	res := false
-	for key, _ := range directionalGraph.vertices {
+	for key := range directionalGraph.vertices {
 		if !visitedDirectional[key] {
 			if directionalGraph.DetectCycleG1(key, visited, rest) {
 				res = true
