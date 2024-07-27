@@ -4,6 +4,7 @@ import (
 	"fmt"
 	hashing "gods/Hashing"
 	linkedList "gods/LinkedLists"
+	stringDS "gods/StringDS"
 	"gods/binarySearchTree"
 	"gods/graph"
 	"gods/heap"
@@ -22,6 +23,7 @@ func main() {
 	dsMap[5] = "Graph"
 	dsMap[6] = "MATRIX"
 	dsMap[7] = "Hashing"
+	dsMap[8] = "Strings"
 
 	for key, val := range dsMap {
 		fmt.Println(key, "			", val)
@@ -54,6 +56,9 @@ func main() {
 	case 7:
 		fmt.Println(dsMap[val])
 		hashing.App()
+	case 8:
+		fmt.Println(dsMap[val])
+		stringDS.App()
 	}
 
 }
