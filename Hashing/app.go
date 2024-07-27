@@ -12,6 +12,10 @@ func App() {
 	hashing[5] = "Union of arrays"
 	hashing[6] = "Positive Negative pair"
 	hashing[7] = "SubArray with zero sum"
+	hashing[8] = "SubArray with given sum"
+	hashing[9] = "Longest SubArray with given sum"
+	hashing[10] = "Longest consecutive subsequence"
+	hashing[11] = "Account Merge"
 
 	for key, val := range hashing {
 		fmt.Println(key, "			", val)
@@ -43,5 +47,17 @@ func App() {
 	case 7:
 		fmt.Println(hashing[val])
 		SubArrayWithZeroSum()
+	case 8:
+		fmt.Println(hashing[val])
+		SubArrayWithGivenSum()
+	case 9:
+		fmt.Println(hashing[val])
+		LongestSubarraySum()
+	case 10:
+		fmt.Println(hashing[val])
+		LongestConsecutiveSubsequence()
+	case 11:
+		fmt.Println(hashing[val])
+		AccountMerge()
 	}
 }
