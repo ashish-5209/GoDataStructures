@@ -12,6 +12,14 @@ func App() {
 	str[5] = "Maximum Occuring character"
 	str[6] = "Case Specific string sorting"
 	str[7] = "Check if string in anagram"
+	str[8] = "Left most repeating character"
+	str[9] = "Left most non repeating character"
+	str[10] = "Modify string"
+	str[11] = "Reverse string"
+	str[12] = "Remove and Concanate String"
+	str[13] = "Sum of digit in String"
+	str[14] = "Find Nth Prime Digit Number"
+	str[15] = "Telehone Problem"
 
 	for key, val := range str {
 		fmt.Println(key, "			", val)
@@ -43,5 +51,29 @@ func App() {
 	case 7:
 		fmt.Println(str[val])
 		CheckAnagram()
+	case 8:
+		fmt.Println(str[val])
+		LeftMostRepeatingCharacter()
+	case 9:
+		fmt.Println(str[val])
+		LeftNonMostRepeatingCharacter()
+	case 10:
+		fmt.Println(str[val])
+		ModifyString()
+	case 11:
+		fmt.Println(str[val])
+		ReverseWords()
+	case 12:
+		fmt.Println(str[val])
+		RemoveAndConcanateString()
+	case 13:
+		fmt.Println(str[val])
+		SumOfNumberInString()
+	case 14:
+		fmt.Println(str[val])
+		FindNthPrimeDigitNumber()
+	case 15:
+		fmt.Println(str[val])
+		TelephoneProblem()
 	}
 }
