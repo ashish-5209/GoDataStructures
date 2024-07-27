@@ -47,7 +47,7 @@ func (g *Graph) Display() {
 	}
 }
 
-func main() {
+func GraphDS() {
 	graph := NewGraph()
 	graph.AddVertex(1)
 	graph.AddVertex(2)
@@ -101,9 +101,10 @@ func main() {
 
 	var visitedDirectional, rest []bool
 	x = 0
-	for x <= len(directionalGraph.vertices) {
+	for x < len(directionalGraph.vertices) {
 		visitedDirectional = append(visitedDirectional, false)
 		rest = append(rest, false)
+		x += 1
 	}
 	res := false
 	for key := range directionalGraph.vertices {
