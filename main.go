@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 	hashing "gods/Hashing"
-	linkedList "gods/LinkedLists"
 	stringDS "gods/StringDS"
 	"gods/binarySearchTree"
 	"gods/graph"
 	"gods/heap"
+	linkedLst "gods/linkedLists"
 	"gods/matrix"
 	"gods/queue"
 	"gods/stack"
@@ -34,7 +34,7 @@ func main() {
 	switch val {
 	case 0:
 		fmt.Println(dsMap[val])
-		linkedList.App()
+		linkedLst.App()
 	case 1:
 		fmt.Println(dsMap[val])
 		heap.App()
